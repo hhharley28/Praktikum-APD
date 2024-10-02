@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="tes"/>
+        <attribute name="authors" value="ahmad"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-02 07.42.27 PM"/>
+        <attribute name="created" value="YWhtYWQ7V09SS1BMVVM7MjAyNC0wOS0yNDswMi4zOC41MCBBTTsyNDAw"/>
+        <attribute name="edited" value="YWhtYWQ7V09SS1BMVVM7MjAyNC0xMC0wMjswMy4zNC4wOSBQTTsxO2l3YW53O0hQMTQ7MjAyNC0wOS0yMjswNzo0MzoyMyBQTTsyNDA5MTA2MDY3X1dhaHl1IEFkaXR5YV9CMV9wb3N0dGVzdDMuZnByZzs4MjI0"/>
+        <attribute name="edited" value="YWhtYWQ7V09SS1BMVVM7MjAyNC0xMC0wMjswNy40Mi4yNyBQTTs1OzI1MTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="BeratMg, TinggiKm, Berat, Tinggi, BMI, salah, salah1" type="Real" array="False" size=""/>
+            <declare name="Username, Password, menu" type="String" array="False" size=""/>
+            <output expression="&quot;Selamat Datang di Cek Kesehatan Online&quot;" newline="True"/>
+            <output expression="&quot;Silahkan Login Terlebih Dahulu&quot;" newline="True"/>
+            <assign variable="salah" expression="0"/>
+            <while expression="salah &lt; 3">
+                <output expression="&quot;Masukkan Username Anda&quot;" newline="True"/>
+                <input variable="Username"/>
+                <output expression="&quot;Masukkan Password Anda&quot;" newline="True"/>
+                <input variable="Password"/>
+                <if expression="Username=&quot;ahmad aidil&quot; &amp;&amp; Password=&quot;80&quot;">
+                    <then>
+                        <assign variable="salah1" expression="0"/>
+                        <while expression="salah1 &lt; 3">
+                            <output expression="&quot; MARI MENGHITUNG BERAT BADAN IDEAL ANDA !! &quot;" newline="True"/>
+                            <output expression="&quot; Masukkan berat badan anda (dalam mg) &quot;" newline="True"/>
+                            <output expression="&quot; Contoh berat anda 50Kg --&gt; 50000000Mg &quot;" newline="True"/>
+                            <input variable="BeratMg"/>
+                            <assign variable="Berat" expression="BeratMg / 1000000"/>
+                            <output expression="&quot; Masukkan tinggi badan anda (dalam Km) &quot;" newline="True"/>
+                            <output expression="&quot; Contoh 170cm --&gt; 1,7m --&gt; 0.0017Km &quot;" newline="True"/>
+                            <input variable="TinggiKm"/>
+                            <assign variable="Tinggi" expression="TinggiKm * 1000"/>
+                            <assign variable="BMI" expression="Berat  /  ( Tinggi^2 )"/>
+                            <if expression="BMI &lt; 18.5">
+                                <then>
+                                    <output expression="&quot; Kategori Berat Badan Anda (UnderWeight) &quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="BMI &lt; 24.9">
+                                        <then>
+                                            <output expression="&quot; Kategori Berat Badan Anda (Normal) &quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="BMI &lt; 29.9">
+                                                <then>
+                                                    <output expression="&quot; Kategori Berat Badan Anda (OverWeight) &quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot; Kategori Berat Badan Anda (Obesitas) &quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                            <output expression="&quot; BMI Anda adalah &quot; &amp; BMI" newline="True"/>
+                            <output expression="&quot;MENU : &quot;" newline="True"/>
+                            <output expression="&quot;1.Ulangi Program &quot;" newline="True"/>
+                            <output expression="&quot;2.Keluar &quot;" newline="True"/>
+                            <output expression="&quot;Masukkan pilihan anda (1/2)&quot;" newline="True"/>
+                            <input variable="menu"/>
+                            <if expression="menu = &quot;1&quot;">
+                                <then/>
+                                <else>
+                                    <output expression="&quot;Terima Kasih Telah Menggunakan Program ini &quot;" newline="True"/>
+                                    <breakpoint expression="" always="True"/>
+                                </else>
+                            </if>
+                        </while>
+                    </then>
+                    <else>
+                        <assign variable="salah" expression="salah + 1"/>
+                        <output expression="&quot;Anda salah memasukkan Username atau Password &quot;" newline="True"/>
+                        <output expression="&quot;Anda Telah Melakukan Kesalahan sebanyak &quot;" newline="False"/>
+                        <output expression="salah" newline="False"/>
+                        <output expression="&quot; kali &quot;" newline="True"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Anda Telah Gagal Login , Coba Beberapa Saat Lagi &quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
